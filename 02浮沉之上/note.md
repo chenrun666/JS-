@@ -228,4 +228,73 @@ arr.forEach(d => console.log(d));
 - ES6出来后是否需要理解原型链？
 
 
+### 异步编程
+
+- 回调函数Callback
+    - 通过传入回调函数作为参数在函数中异步执行
+    - 优点： 简单
+    - 缺点： 回调地狱
+
+- Promise
+    - ES6 中出现的异步解决方案
+    - 可以获取异步操作消息的对象
+    - resolve / reject, then / catch
+    - 优点： 解决了回调地狱
+    - 缺点： 代码可读性不高
+
+- async / await
+    - ES8 中出现的异步解决方案
+    - 是基于Promise的语法糖， 需要了解Promise相关知识
+    - async 返回Promise对象
+    - async 函数遇到await时会终止运行， 知道相应的Promise状态变为resolved
+    - 优点：解决了Promise代码可读性问题， 代码可读性高
+    - 缺点： 多个并行异步操作需要用Promise.all来执行
+
+
+### 浏览器存储
+
+- Cookies
+    - 主要用于与服务端通信
+    - 存储量小
+- Local Storage
+    - 存储量相对于Cookies更大
+    - 只能存储字符串
+- Session Storage
+    - 只存在于当前Session， 关闭浏览器就丢失了
+    - 其他与Local Storage一样
+- IndexedDB
+    - 相当于浏览器上的SQL数据库
+    - 更大的储存空间
+    - API比较难掌握
+
+### 跨域
+
+- 定义： 客户端与不同源的服务端通信
+
+#### 解决
+
+- CORS
+    - 跨域资源共享， 解决跨域请求的方案的成熟方案
+- JSONP
+    - 基于 <script> 标签具有可跨域特性
+    - 只能用于GET请求
+- iframe
+    - 通过 <iframe> 标签在一个页面展示不同源的页面
+    - 通过 PostMessage 进行页面之间的通信
+- 反向代理
+    - 通过反向代理让客户端与服务端保持同源
+
+### Webpack 打包
+
+-  目的
+    - 将不同类型的源文件编译打包成静态文件
+- 为什么使用Webpack
+    - 前端技术纷繁复杂， 缺乏统一管理
+    - 大型项目需要模块化
+    - 对于例如JSX， TS之类的新技术需要编译后才能使用
+- 编译器
+- 插件
+- 优化
+
 ## 总结
+
