@@ -140,3 +140,15 @@ result = await page.evaluteOnNewDocument(js, *data)
 
 **使用Nodejs的Express框架来实现**
 和正常写API一样， 调用一下目标JS就好了
+
+## 使用NodeJS的问题
+
+### window对象
+
+- NodeJS没有window对象， 如果使用window对象需要自己创建一个或者指向global
+- jsdom之类的库
+
+### Base64
+
+- window.btoa 在nodejs中不存在
+- Buffer.from('abcd').toString('base64')
